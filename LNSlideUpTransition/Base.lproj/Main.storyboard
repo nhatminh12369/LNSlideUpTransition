@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--First View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FirstViewController" customModule="LNSlideUpTransition" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLR-HC-Zhh">
+                                <rect key="frame" x="284" y="124" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="btNextClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W5s-aX-eHH"/>
+                                    <segue destination="SvO-Ya-hGr" kind="presentation" id="LAX-x8-Zmw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.87672067040049106" blue="0.26573745180463149" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="LLR-HC-Zhh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="crX-Sa-Jph"/>
+                            <constraint firstItem="LLR-HC-Zhh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="104" id="hNo-5a-BvB"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="ftE-UP-gRw">
+            <objects>
+                <viewController id="SvO-Ya-hGr" customClass="SecondViewController" customModule="LNSlideUpTransition" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v8G-Fd-fAe"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tcp-6e-pnK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Imp-v7-W0L">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAq-fA-qOi">
+                                <rect key="frame" x="283" y="120" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="btBackClicked:" destination="SvO-Ya-hGr" eventType="touchUpInside" id="0ir-Mp-afh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.081584182544946149" green="1" blue="0.79778532194181528" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZAq-fA-qOi" firstAttribute="top" secondItem="v8G-Fd-fAe" secondAttribute="bottom" constant="100" id="7CU-Al-bbs"/>
+                            <constraint firstItem="ZAq-fA-qOi" firstAttribute="centerX" secondItem="Imp-v7-W0L" secondAttribute="centerX" id="fmR-3J-3T4"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LzN-oR-zEk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1140" y="315"/>
+        </scene>
+    </scenes>
+</document>

@@ -22,10 +22,18 @@
 
 import UIKit
 
-class SlideUpDismissAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
+class LNSlideUpDismissAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
+    
+    weak var transitionManager:LNSlideUpTransitionManager!
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-        return 0.5
+        if transitionManager.bounceAnimation {
+            return transitionManager.DEFAULT_DURATION
+        } else if transitionManager.springAnimation {
+            return transitionManager.duration*0.6
+        } else {
+            return transitionManager.duration
+        }
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
@@ -35,7 +43,6 @@ class SlideUpDismissAnimatedTransitioning: NSObject, UIViewControllerAnimatedTra
                 return
         }
         let finalFrameFromVC = CGRectMake(0, fromVC.view.frame.size.height, fromVC.view.frame.size.width, fromVC.view.frame.size.height)
-        
         
         toVC.view.transform = CGAffineTransformMakeScale(0.9, 0.9)
         let snapshot = fromVC.view.snapshotViewAfterScreenUpdates(false)

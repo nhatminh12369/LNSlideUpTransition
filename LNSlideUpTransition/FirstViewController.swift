@@ -8,9 +8,9 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UIViewControllerTransitioningDelegate {
-    private let slideUpPresentTransitioning = SlideUpPresentAnimatedTransitioning()
-    private let slideUpDismissTransitioning = SlideUpDismissAnimatedTransitioning()
+class FirstViewController: UIViewController {
+    
+    var slideUpTransition:LNSlideUpTransitionManager = LNSlideUpTransitionManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,16 +28,10 @@ class FirstViewController: UIViewController, UIViewControllerTransitioningDelega
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let destinationViewController = segue.destinationViewController
-        destinationViewController.transitioningDelegate = self
+//        slideUpTransition.duration = 0.6
+//        // You can turn on either springAnimation or bounceAnimation. If you turn on both, spring animation will be used
+//        slideUpTransition.springAnimation = true
+//        slideUpTransition.bounceAnimation = true
+        destinationViewController.transitioningDelegate = slideUpTransition
     }
-    
-    // Transitioning delegate
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return slideUpPresentTransitioning
-    }
-    
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return slideUpDismissTransitioning
-    }
-
 }

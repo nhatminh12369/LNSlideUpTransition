@@ -25,16 +25,30 @@
                                     <segue destination="SvO-Ya-hGr" kind="presentation" id="LAX-x8-Zmw"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bcG-AS-Juf">
+                                <rect key="frame" x="209" y="70" width="182" height="29"/>
+                                <segments>
+                                    <segment title="Normal"/>
+                                    <segment title="Spring"/>
+                                    <segment title="Bounce"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="KDb-jb-EiE"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.87672067040049106" blue="0.26573745180463149" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="bcG-AS-Juf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OrV-Xd-fya"/>
                             <constraint firstItem="LLR-HC-Zhh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="crX-Sa-Jph"/>
+                            <constraint firstItem="bcG-AS-Juf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="gS1-bH-RSS"/>
                             <constraint firstItem="LLR-HC-Zhh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="104" id="hNo-5a-BvB"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="387"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="ftE-UP-gRw">

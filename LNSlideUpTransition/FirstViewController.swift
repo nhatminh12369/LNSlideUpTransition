@@ -26,6 +26,23 @@ class FirstViewController: UIViewController {
         
     }
     
+    @IBAction func segmentedControlValueChanged(sender: AnyObject) {
+        //let segmentedControl:UISegmentedControl = UISegmentedControl(items: sender as! [AnyObject])
+        switch sender.selectedSegmentIndex {
+        case 0:
+            slideUpTransition.springAnimation = false
+            slideUpTransition.bounceAnimation = false
+        case 1:
+            slideUpTransition.springAnimation = true
+            slideUpTransition.bounceAnimation = false
+        case 2:
+            slideUpTransition.springAnimation = false
+            slideUpTransition.bounceAnimation = true
+        default:
+            break
+        }
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let destinationViewController = segue.destinationViewController
 //        slideUpTransition.duration = 0.6

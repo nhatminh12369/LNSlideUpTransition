@@ -1,31 +1,34 @@
 # LNSlideUpTransition
-A very simple slide-up transition which adopts UIViewControllerAnimatedTransitioning
+A simple slide-up transition which adopts UIViewControllerAnimatedTransitioning.
 
 ![demo](https://raw.githubusercontent.com/nhatminh12369/LNSlideUpTransition/master/demo.gif)
 
 ## Installation
-Copy SlideUpPresentAnimatedTransitioning.swift and SlideUpDismissAnimatedTransitioning.swift into your project
+Copy 'LNSlideUpTransition' folder into your project. There are 3 files in that folder:
+LNSlideUpPresentAnimatedTransitioning.swift
+LNSlideUpDismissAnimatedTransitioning.swift
+LNSlideUpTransitionManager.swift
 
 ## Usage
+You need to set the transitionDelegate of the destination view controller to an instance of LNSlideUpTransitionManager
+
 ```swift
-class YourViewController: UIViewController, UIViewControllerTransitioningDelegate {
-    private let slideUpPresentTransitioning = SlideUpPresentAnimatedTransitioning()
-    private let slideUpDismissTransitioning = SlideUpDismissAnimatedTransitioning()
+class FirstViewController: UIViewController {
+
+    var slideUpTransition:LNSlideUpTransitionManager = LNSlideUpTransitionManager()
+    
+    ....
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let destinationViewController = segue.destinationViewController
-        destinationViewController.transitioningDelegate = self
-    }
-    
-    // Transitioning delegate
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return slideUpPresentTransitioning
-    }
-    
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return slideUpDismissTransitioning
+//       slideUpTransition.duration = 0.6
+//       // You can turn on either springAnimation or bounceAnimation. If you turn on both, spring animation               will be used
+//       slideUpTransition.springAnimation = true
+//       slideUpTransition.bounceAnimation = true
+        destinationViewController.transitioningDelegate = slideUpTransition
     }
 }
+
 ```
 
 ## Authors
